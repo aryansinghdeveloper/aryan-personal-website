@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Aryan Singh | Personal Website</title>
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080b16;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(8, 11, 22, 0.95);
+
+            border-bottom: 1px solid #252b40;
+        }
+
+        nav h2 {
+            color: #00d9ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+
+        /* =========================
+           HOME / INTRO
+        ========================= */
+
+        .home {
+
+            min-height: 90vh;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 50px;
+
+            padding: 80px 7%;
+
+            background:
+            linear-gradient(135deg,
+            #080b16,
+            #101b3d);
+        }
+
+        .home-content {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: #00d9ff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .home h1 {
+            font-size: 65px;
+            margin: 15px 0;
+        }
+
+        .home h1 span {
+            color: #00d9ff;
+        }
+
+        .home p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+
+        /* BUTTON */
+
+        .btn {
+
+            display: inline-block;
+
+            background: #00d9ff;
+
+            color: #06111f;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+
+        /* =========================
+           PROFILE PHOTO
+        ========================= */
+
+        .profile-photo {
+
+            width: 320px;
+            height: 320px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            border: 5px solid #00d9ff;
+
+            box-shadow:
+            0 0 40px rgba(0,217,255,0.3);
+        }
+
+        .profile-photo img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+
+            font-size: 42px;
+
+            color: #00d9ff;
+        }
+
+        .section-title p {
+
+            color: #94a3b8;
+
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about-container p {
+
+            color: #cbd5e1;
+
+            font-size: 18px;
+
+            line-height: 2;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+
+            background: #11182d;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid #252b40;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #00d9ff;
+        }
+
+        .card h3 {
+
+            color: #00d9ff;
+
+            margin-bottom: 12px;
+        }
+
+        .card p {
+
+            color: #cbd5e1;
+        }
+
+
+        /* =========================
+           PHOTO GALLERY
+        ========================= */
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
+
+        .gallery img {
+
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            border: 2px solid #252b40;
+
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+
+            transform: scale(1.03);
+
+            border-color: #00d9ff;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+        .contact p {
+
+            color: #cbd5e1;
+
+            margin: 12px;
+        }
+
+        .social-links {
+
+            margin-top: 25px;
+        }
+
+        .social-links a {
+
+            display: inline-block;
+
+            padding: 12px 20px;
+
+            margin: 7px;
+
+            border-radius: 25px;
+
+            background: #11182d;
+
+            border: 1px solid #252b40;
+        }
+
+        .social-links a:hover {
+
+            background: #00d9ff;
+
+            color: black;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            background: #05070e;
+
+            color: #94a3b8;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 750px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+            }
+
+            .home {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding-top: 60px;
+            }
+
+            .home h1 {
+
+                font-size: 45px;
+            }
+
+            .profile-photo {
+
+                width: 240px;
+
+                height: 240px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<nav>
+
+    <h2>Aryan Singh</h2>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#hobbies">Hobbies</a>
+        </li>
+
+        <li>
+            <a href="#gallery">Photos</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =====================================
+     HOME / INTRODUCTION
+===================================== -->
+
+<section class="home" id="home">
+
+    <div class="home-content">
+
+        <div class="small-title">
+            HELLO, WELCOME TO MY WEBSITE
+        </div>
+
+        <h1>
+
+            I'm
+            <span>Aryan Singh</span>
+
+        </h1>
+
+        <p>
+
+            Hello! I am Aryan Singh.
+
+            Welcome to my personal website.
+
+            Here you can learn about me,
+            my education, skills, hobbies,
+            interests, goals and journey.
+
+        </p>
+
+        <a href="#about" class="btn">
+            Explore My Website
+        </a>
+
+    </div>
+
+
+    <!-- MAIN PHOTO -->
+
+    <div class="profile-photo">
+
+        <img src="photo1.jpg.jpeg"
+        alt="Aryan Singh">
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ABOUT ME
+===================================== -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>About Me</h2>
+
+        <p>Get to know me</p>
+
+    </div>
+
+
+    <div class="about-container">
+
+        <p>
+
+            Hello everyone! My name is Aryan Singh.
+
+            I am a student who is interested in
+            computers, technology and programming.
+
+            I enjoy learning new things and
+            developing my technical knowledge.
+
+            I am especially interested in programming,
+            web development, databases and modern
+            technologies.
+
+            I believe that continuous learning,
+            hard work and practice are important
+            for achieving success.
+
+            This website represents my personal
+            introduction, my interests, my skills
+            and my future goals.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     EDUCATION
+===================================== -->
+
+<section id="education">
+
+    <div class="section-title">
+
+        <h2>My Education</h2>
+
+        <p>My academic journey</p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>School Education</h3>
+
+            <p>
+
+                My school education helped me
+                develop basic knowledge,
+                discipline and interest in
+                different subjects.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>College Education</h3>
+
+            <p>
+
+                I am currently continuing my
+                education and learning computer
+                programming and technology.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Future Learning</h3>
+
+            <p>
+
+                I want to continuously learn
+                new technologies and improve
+                my professional skills.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     SKILLS
+===================================== -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <h2>My Skills</h2>
+
+        <p>Things I am learning</p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>HTML</h3>
+
+            <p>
+
+                Creating and structuring
+                web pages using HTML.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>C Programming</h3>
+
+            <p>
+
+                Learning programming logic,
+                 and functions.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>C++</h3>
+
+            <p>
+
+                Learning object-oriented
+                programming and problem solving.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>SQL</h3>
+
+            <p>
+
+                Learning databases,
+                queries and data management.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Power BI</h3>
+
+            <p>
+
+                Learning data analysis
+                and visualization.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     HOBBIES
+===================================== -->
+
+<section id="hobbies">
+
+    <div class="section-title">
+
+        <h2>My Hobbies & Interests</h2>
+
+        <p>Things I enjoy , playing cricket , listing a song</p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>💻 Technology</h3>
+
+            <p>
+
+                I enjoy exploring computers,
+                 and new technologies.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>📚 Passion</h3>
+
+            <p>
+
+                I like Passion new trends
+                and improving my knowledge.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🌐 Web Development</h3>
+
+            <p>
+
+                I am interested in creating
+                websites and learning web
+                development.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🎮 Entertainment</h3>
+
+            <p>
+
+                I also enjoy entertainment
+                and spending free time
+                with sister and friends I like.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MY GOALS
+===================================== -->
+
+<section id="goals">
+
+    <div class="section-title">
+
+        <h2>My Goals</h2>
+
+        <p>My future plans</p>
+
+    </div>
+
+
+    <div class="about-container">
+
+        <p>
+
+            My goal is to become a skilled
+            professional in the technology field.
+
+            I want to improve my programming
+            knowledge, learn advanced web
+            development and build real-world
+            projects.
+
+            I also want to gain practical
+            experience and continuously improve
+            myself.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PHOTO GALLERY
+===================================== -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <h2>My Photos</h2>
+
+        <p>My personal photo gallery</p>
+
+    </div>
+
+
+    <div class="gallery">
+
+    <img src="./photo1.jpg.jpeg" alt="Aryan 1">
+
+    <img src="./photo2.jpg.jpeg" alt="Aryan 2">
+
+    <img src="./photo3.jpg.jpeg" alt="Aryan 3">
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     CONTACT
+===================================== -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Me</h2>
+
+        <p>Let's connect</p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <p>
+            📧 Email:
+            ksgroup876..@gmail.com
+        </p>
+
+        <p>
+            📱 Phone:
+            +91 630752XXXX
+        </p>
+
+
+        <div class="social-links">
+        <a href="https://www.instagram.com/__aryan777_/" target="_blank">
+      Instagram
+      </a>
+
+
+            
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <p>
+
+        © 2026 Aryan Singh |
+        My Personal Website
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
